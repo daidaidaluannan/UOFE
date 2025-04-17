@@ -1,0 +1,64 @@
+The flag 'directory' used in rule cgwas_pre is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job            count
+-----------  -------
+all                1
+cgwas_pre          1
+fastGWA_pre        1
+run_gcta           1
+total              4
+
+Select jobs to execute...
+
+[Fri Apr  4 15:32:27 2025]
+rule fastGWA_pre:
+    input: /home/wcy/data/UKB/eye_feature/feature_data/right_vit.csv
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit
+    jobid: 3
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 15:35:37 2025]
+Finished job 3.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Fri Apr  4 15:35:37 2025]
+rule run_gcta:
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit_result
+    jobid: 2
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit_result; Input files updated by another job: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 17:22:06 2025]
+Finished job 2.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Fri Apr  4 17:22:06 2025]
+rule cgwas_pre:
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit_result
+    output: /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_vessel_vit_result
+    jobid: 1
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_vessel_vit_result; Input files updated by another job: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit_result
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 17:22:09 2025]
+Error in rule cgwas_pre:
+    jobid: 1
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit_result
+    output: /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_vessel_vit_result
+    conda-env: retfound
+    shell:
+        python cgwas_pre.py --input_folder /home/wcy/data/UKB/eye_feature/gwas/main_group/right_vessel_vit_result --output_folder /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_vessel_vit_result
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-04T153224.524734.snakemake.log

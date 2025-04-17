@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+cgwas_pre          1
+fastGWA_pre        1
+run_gcta           1
+total              4
+
+Select jobs to execute...
+
+[Fri Oct 11 23:52:59 2024]
+rule fastGWA_pre:
+    input: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno
+    jobid: 3
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+ImproperOutputException in rule fastGWA_pre in file /home/wcy/data/UKB/eye_feature/code/Snakefile, line 35:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule fastGWA_pre:
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno
+    affected files:
+        /home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno
+Removing output files of failed job fastGWA_pre since they might be corrupted:
+/home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno
+Skipped removing non-empty directory /home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-10-11T235255.620017.snakemake.log

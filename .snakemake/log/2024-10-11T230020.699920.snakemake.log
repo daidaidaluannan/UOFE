@@ -1,0 +1,3 @@
+NameError in file /home/wcy/data/UKB/eye_feature/code/Snakefile, line 42:
+name 'params' is not defined
+  File "/home/wcy/data/UKB/eye_feature/code/Snakefile", line 42, in <module>

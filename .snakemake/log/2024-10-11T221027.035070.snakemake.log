@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+feature_extract        1
+total                  1
+
+Select jobs to execute...
+
+[Fri Oct 11 22:10:27 2024]
+rule feature_extract:
+    input: /home/wcy/data/UKB/eye_feature/model/optic_dim64_best.pth, /home/wcy/data/UKB/ukb_eye/Results_right/M2/optic_disc_cup/raw
+    output: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+[Fri Oct 11 22:10:32 2024]
+Error in rule feature_extract:
+    jobid: 0
+    input: /home/wcy/data/UKB/eye_feature/model/optic_dim64_best.pth, /home/wcy/data/UKB/ukb_eye/Results_right/M2/optic_disc_cup/raw
+    output: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    conda-env: retfound
+    shell:
+        python feature_extract.py --model_path /home/wcy/data/UKB/eye_feature/model/optic_dim64_best.pth --model_type VAE --image_folder /home/wcy/data/UKB/ukb_eye/Results_right/M2/optic_disc_cup/raw --output_csv /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-10-11T221027.035070.snakemake.log
