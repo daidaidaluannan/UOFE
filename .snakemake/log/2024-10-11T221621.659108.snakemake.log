@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+feature_extract        1
+total                  1
+
+Select jobs to execute...
+
+[Fri Oct 11 22:16:22 2024]
+rule feature_extract:
+    input: /home/wcy/data/UKB/eye_feature/model/optic_dim64_best.pth, /home/wcy/data/UKB/ukb_eye/Results_right/M2/optic_disc_cup/raw
+    output: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    jobid: 0
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+[Fri Oct 11 22:45:01 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-10-11T221621.659108.snakemake.log

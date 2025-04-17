@@ -1,0 +1,66 @@
+The flag 'directory' used in rule cgwas_pre is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+cgwas_pre              1
+fastGWA_pre            1
+feature_extract        1
+run_gcta               1
+total                  5
+
+Select jobs to execute...
+
+[Sat Oct 12 22:35:37 2024]
+rule feature_extract:
+    input: /home/wcy/data/UKB/eye_feature/model/flitter_dim64_best.pth, /home/wcy/data/UKB/ukb_eye/Results_right/M1/right_flitter
+    output: /home/wcy/data/UKB/eye_feature/feature_data/right_flitter_dim64.csv
+    jobid: 4
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/feature_data/right_flitter_dim64.csv
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+[Sat Oct 12 22:41:19 2024]
+Finished job 4.
+1 of 5 steps (20%) done
+Select jobs to execute...
+
+[Sat Oct 12 22:41:19 2024]
+rule fastGWA_pre:
+    input: /home/wcy/data/UKB/eye_feature/feature_data/right_flitter_dim64.csv
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno
+    jobid: 3
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno; Input files updated by another job: /home/wcy/data/UKB/eye_feature/feature_data/right_flitter_dim64.csv
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+[Sat Oct 12 22:44:02 2024]
+Finished job 3.
+2 of 5 steps (40%) done
+Select jobs to execute...
+
+[Sat Oct 12 22:44:02 2024]
+rule run_gcta:
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno_result
+    jobid: 2
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno_result; Input files updated by another job: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+Terminating processes on user request, this might take some time.
+[Sat Oct 12 22:45:04 2024]
+Error in rule run_gcta:
+    jobid: 2
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno_result
+    conda-env: retfound
+    shell:
+        python run_gcta.py --pheno_dir /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno --output_dir /home/wcy/data/UKB/eye_feature/gwas/main_group/right_flitter_dim64_pheno_result
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2024-10-12T223534.669836.snakemake.log

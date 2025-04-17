@@ -1,0 +1,5 @@
+The flag 'directory' used in rule run_gcta is only valid for outputs, not inputs.
+The flag 'directory' used in rule cgwas_pre is only valid for outputs, not inputs.
+WildcardError in file /home/wcy/data/UKB/eye_feature/code/Snakefile, line 69:
+No values given for wildcard 'FEATURE_NAME'.
+  File "/home/wcy/data/UKB/eye_feature/code/Snakefile", line 69, in <module>

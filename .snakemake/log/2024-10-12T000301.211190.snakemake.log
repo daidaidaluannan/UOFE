@@ -1,0 +1,51 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+cgwas_pre          1
+fastGWA_pre        1
+total              3
+
+Select jobs to execute...
+
+[Sat Oct 12 00:03:04 2024]
+rule cgwas_pre:
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno_result
+    output: /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_optic_dim64_pheno_result
+    jobid: 3
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_optic_dim64_pheno_result
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+
+[Sat Oct 12 00:03:07 2024]
+rule fastGWA_pre:
+    input: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+[Sat Oct 12 00:03:08 2024]
+Finished job 3.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Sat Oct 12 00:03:08 2024]
+localrule all:
+    input: /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_optic_dim64_pheno_result
+    jobid: 2
+    reason: Input files updated by another job: /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_optic_dim64_pheno_result
+    resources: tmpdir=/tmp
+
+[Sat Oct 12 00:03:08 2024]
+Finished job 2.
+2 of 3 steps (67%) done
+[Sat Oct 12 00:05:35 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2024-10-12T000301.211190.snakemake.log

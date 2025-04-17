@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+feature_extract        1
+total                  1
+
+Select jobs to execute...
+
+[Fri Oct 11 22:57:57 2024]
+rule feature_extract:
+    input: /home/wcy/data/UKB/eye_feature/model/optic_dim64_best.pth, /home/wcy/data/UKB/ukb_eye/Results_right/M2/optic_disc_cup/raw
+    output: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    jobid: 0
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+Terminating processes on user request, this might take some time.
+[Fri Oct 11 22:58:17 2024]
+Error in rule feature_extract:
+    jobid: 0
+    input: /home/wcy/data/UKB/eye_feature/model/optic_dim64_best.pth, /home/wcy/data/UKB/ukb_eye/Results_right/M2/optic_disc_cup/raw
+    output: /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv
+    conda-env: retfound
+    shell:
+        python feature_extract.py --model_path /home/wcy/data/UKB/eye_feature/model/optic_dim64_best.pth --model_type VAE --image_folder /home/wcy/data/UKB/ukb_eye/Results_right/M2/optic_disc_cup/raw --output_csv /home/wcy/data/UKB/eye_feature/feature_data/right_optic_dim64.csv --latent_dim 64
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2024-10-11T225756.816418.snakemake.log

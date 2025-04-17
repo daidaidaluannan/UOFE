@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /home/wcy/data/UKB/eye_feature/code/Snakefile, line 14:
+Missing input files for rule all:
+    affected files:
+        /home/wcy/data/UKB/eye_feature/cgwas/main_group/right_optic_dim64_pheno_result

@@ -1,0 +1,3 @@
+SyntaxError:
+Only input files can be specified as functions
+  File "/home/wcy/data/UKB/eye_feature/code/Snakefile", line 27, in <module>

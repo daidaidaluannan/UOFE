@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+cgwas_pre        1
+total            1
+
+Select jobs to execute...
+
+[Sat Oct 12 11:56:05 2024]
+rule cgwas_pre:
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/right_optic_dim64_pheno_result
+    output: /home/wcy/data/UKB/eye_feature/cgwas/main_group
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+[Sat Oct 12 12:12:51 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-10-12T115602.293303.snakemake.log

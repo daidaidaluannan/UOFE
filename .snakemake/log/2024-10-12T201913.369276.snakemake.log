@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule cgwas_pre in file /home/wcy/data/UKB/eye_feature/code/Snakefile, line 63:
+Missing input files for rule cgwas_pre:
+    output: /home/wcy/data/UKB/eye_feature/cgwas/main_group/left_flitter_dim64_pheno_result
+    affected files:
+        /home/wcy/data/UKB/eye_feature/gwas/main_group/left_flitter_dim64_pheno_result

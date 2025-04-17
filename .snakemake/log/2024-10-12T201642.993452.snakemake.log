@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule run_gcta in file /home/wcy/data/UKB/eye_feature/code/Snakefile, line 50:
+Missing input files for rule run_gcta:
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/left_flitter_dim64_pheno_result
+    affected files:
+        /home/wcy/data/UKB/eye_feature/gwas/main_group/left_flitter_dim64_pheno

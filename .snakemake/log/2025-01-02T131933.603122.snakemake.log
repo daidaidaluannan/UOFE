@@ -1,0 +1,28 @@
+The flag 'directory' used in rule cgwas_pre is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+cgwas_pre              1
+fastGWA_pre            1
+feature_extract        1
+run_gcta               1
+total                  5
+
+Select jobs to execute...
+
+[Thu Jan  2 13:19:43 2025]
+rule feature_extract:
+    input: /home/wcy/data/UKB/eye_feature/model/flitter_dim64_best.pth, /home/wcy/data/UKB/ukb_eye/Results_left/M2/optic_disc_cup/raw
+    output: /home/wcy/data/UKB/eye_feature/feature_data/left_flitter_dim64.csv
+    jobid: 4
+    reason: Set of input files has changed since last execution
+    resources: tmpdir=/tmp
+
+Activating conda environment: retfound
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

@@ -1,0 +1,26 @@
+The flag 'directory' used in rule cgwas_pre is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 72
+Rules claiming more threads will be scaled down.
+Job stats:
+job          count
+---------  -------
+all              1
+cgwas_pre        1
+run_gcta         1
+total            3
+
+Select jobs to execute...
+
+[Sat Oct 12 20:58:28 2024]
+rule run_gcta:
+    input: /home/wcy/data/UKB/eye_feature/gwas/main_group/left_flitter_dim64_pheno
+    output: /home/wcy/data/UKB/eye_feature/gwas/main_group/left_flitter_dim64_pheno_result
+    jobid: 2
+    reason: Missing output files: /home/wcy/data/UKB/eye_feature/gwas/main_group/left_flitter_dim64_pheno_result
+    resources: tmpdir=/tmp
+
+RuleException in rule run_gcta in file /home/wcy/data/UKB/eye_feature/code/Snakefile, line 50:
+AttributeError: 'OutputFiles' object has no attribute 'input', when formatting the following:
+python run_gcta.py --pheno_dir {input.pheno_dir} --output_dir {output.input}
